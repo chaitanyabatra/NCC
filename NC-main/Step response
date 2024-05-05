@@ -1,0 +1,71 @@
+%Step Response
+
+% G(s)=4500K/(s2 +361.2s+4500K) ;K=7.248;14.5;181.2
+% clear all;
+% close all;
+% clc;
+% k=[7.248,14.5,181.2];
+% for i=1:3
+%     numerator=4500*k (i);
+%     denominator=[1,361.2,4500*k(i)];
+%     sys=tf(numerator, denominator);
+%     sys=sys/(1+sys) 
+%     subplot(3,1, i) ;
+%     step(sys) ;
+% end
+
+% G(s) = 15000000*k / (s3 + 3408.3s2 + 1204000s + 15000000k) K=7.248;14.5;181.2
+% clear all;
+% close all;
+% clc;
+% k=[7.248 14.5 181.2];
+% for i=1:3
+%     numerator=15000000*k(i);
+%     denominator=[1,3408.3,1204000,15000000*k(i)];
+%     sys=tf (numerator, denominator);
+%     sys=sys/(1+sys);
+%     subplot(3,1, i);
+%     step(sys);
+% end
+
+% G(s) = w2 / (s2 + 2Ews + w2), After Adding zero G(s) = w2(1+T2s) / (s2 + 2Ews + w2)
+% where W = 1, E = 0.5, T2 = 0,1,3,6,10. Compare response of system with and without
+% zero.
+% clear all;
+% close all;
+% clc;
+% 
+% w = 1;
+% E = 0.5;
+% 
+% % Without zero
+% numerator = w^2;
+% denominator = [1, 2*w, w^2];
+% sys = tf(numerator, denominator);
+% sys = sys / (1 + sys);
+% subplot(6, 1, 1);
+% step(sys);
+% title('Without Zero');
+% 
+% % With zero
+% T = [0, 1, 3, 6, 10];
+% for i = 1:5
+%     numerator = [T(i)*w^2, w^2];
+%     denominator = [1, 2*E*w, w^2];
+%     sys = tf(numerator, denominator);
+%     sys = sys / (1 + sys);
+%     subplot(6, 1, i+1);
+%     step(sys);
+%     title(['With Zero at T = ', num2str(T(i))]);
+% end
+
+% 𝐺(𝑠) = ω2n / (s2 + 2 ξ ω2n + ω2n ); ωn = 1; ξ = 0. 5; 𝑇2 = 0, 1, 3, 6, 10
+% clc;
+% close all;
+% clear all;
+% numerator=1;
+% denominator=[1,1,2];
+% sys=tf (numerator, denominator);
+% display (sys);
+% subplot (1,1, 1) ;
+% step (sys) ;

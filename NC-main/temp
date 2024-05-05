@@ -1,0 +1,26 @@
+Steps :
+
+1. Open HFSS
+2. Create new project
+3. Go to Project -> Insert new HFSS design
+4. 'Draw box', 3D box bnao
+5. Box ke andar wale box pe click krke uski prop edit kro
+6. Xsize - 22.86, Ysize - 10.16, Z size - 100
+7. Position : -11.43,-5.08,0
+8. Rotate kar aur front and back faces ko excitation de
+9. Right click and select face, right click and assign excitation -> wave port, Integration line - new line, 
+10. 2 triangles lga edges pe uss face ke centre pe, apne aap aenge triangles
+11. Same opposite face ke liye bhi karo
+12. Baaki 4 faces select karo, right click, Asign boundary - perfect E
+13. Leftmost panel mei excitation aur boundaries dikh jaengi ab
+14. leftmost panel mei hi go to analysis -> add solution setup, solution frequency as 10GHz
+15. leftmost mei analysis mei setup add hogya hoga, usme right click kar, add frequency sweep
+16. start - 7 , stop - 15 , step size - 0.1
+17. right click on analysis and analyze all, save the project
+18. Simulation .......
+19. right click on empty space, select object, box select karo poora
+20. firse right click and plot fields, e field, vector e
+21. left most panel se e field ko right click krke animate bhi kar skte hai
+22. koi bhi face select krke plot e field, mag e, usko bhi animate karlo
+23. leftmost panel mei, analysis ke under results ara hoga, uspe right click kar and create modal solution data report->rectangular plot
+24. cutoff freq - 6.56 ghz, te10 mode mei

@@ -1,0 +1,44 @@
+%Root
+
+% G(s)H(s)=K/(s(s+4)(s2+4s+20)
+% clear all;
+% close all;
+% clc;
+% k= [-3000,3000];
+% for i=1:2
+%     numerator=k(i);
+%     denominator= [1,8,36,80,0];
+%     sys=tf (numerator, denominator) ;
+%     display (sys);
+%     subplot (2,1, i) ; rlocus (sys) ;
+% end
+
+
+% G(s)H(s)=K(s+3)/(s(s+5)(s+6)(s2+2s+2))
+% clear all;
+% close all;
+% clc;
+% k=[-3000,3000];
+% for i=1:2
+%     numerator=[k(i), 3*k(i)];
+%     denominator=[1,21, 35,44,22,0];
+%     sys=tf(numerator, denominator);
+%     display (sys);
+%     subplot (2,1,i) ;
+%     rlocus (sys) ;
+% end
+
+% G(s)H(s) = k(s+2)/(s(s2+2s+a)) for a = 1:1.12,1.185,3
+clear all;
+close all;
+clc;
+k=3000;
+a=[1,1.12,1.185,3];
+for j=1:4
+    numerator= [k, 2*k];
+    denominator=[1,2, a(j),0];
+    sys=tf(numerator, denominator);
+    display(sys)
+    subplot(4,1,j);
+    rlocus(sys) ;
+end

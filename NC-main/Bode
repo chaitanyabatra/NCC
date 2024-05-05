@@ -1,0 +1,52 @@
+%Bode plot
+
+% clc;
+% 
+% close all;
+% 
+% clear alli
+% 
+% num=2500;
+% 
+% den = [1 15 50 0];
+% 
+% func = tf (num, den) ;
+% 
+% [GainMargin, PhaseMargin, PhaseCrossOverFrequency, GainCrossOverFrequency] = margin (func) ;
+% 
+% display ("Gain Margin: " + GainMargin);
+% 
+% display ("Phase Margin: " + PhaseMargin) ;
+% 
+% display ("Gain Cross Over Frequency: " + GainCrossOverFrequency) ;
+% 
+% display("Phase Cross Over Frequency: " + PhaseCrossOverFrequency) ;
+% 
+% bode (func) ;
+
+
+
+
+clc;
+
+close all;
+
+clear alli
+
+num=[100 4500 20000];
+
+den = [1 300 20000 0 0 0];
+
+func = tf (num, den) ;
+
+[GainMargin, PhaseMargin, PhaseCrossOverFrequency, GainCrossOverFrequency] = margin (func) ;
+
+display ("Gain Margin: " + GainMargin);
+
+display ("Phase Margin: " + PhaseMargin) ;
+
+display ("Gain Cross Over Frequency: " + GainCrossOverFrequency) ;
+
+display ("Phase Cross Over Frequency: " + PhaseCrossOverFrequency) ;
+
+bode (func) ;
